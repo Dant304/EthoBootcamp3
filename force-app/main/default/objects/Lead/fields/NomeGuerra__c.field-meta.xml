@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NomeGuerra__c</fullName>
+    <description>Indique como o personagem é conhecido de modo geral.
+Ex.: Homem Aranha, Hulk...</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indique como o personagem é conhecido de modo geral.
+Ex.: Homem Aranha, Hulk...</inlineHelpText>
+    <label>Nome de Guerra</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

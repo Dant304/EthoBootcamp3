@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ObrigaTelefone</fullName>
+    <active>false</active>
+    <description>Obriga o usuário a cadastrar o numero</description>
+    <errorConditionFormula>Phone == null || Phone == &quot; &quot;</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Obrigatório o preenchimento do campo Telefone</errorMessage>
+</ValidationRule>

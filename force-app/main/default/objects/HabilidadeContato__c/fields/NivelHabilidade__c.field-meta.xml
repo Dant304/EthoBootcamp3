@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NivelHabilidade__c</fullName>
+    <description>Campo para armazenar o nivel de habilidade do contato</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selecione de 0 a 100 para definir o nivel de habilidade do contato atual</inlineHelpText>
+    <label>Nivel Habilidade</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

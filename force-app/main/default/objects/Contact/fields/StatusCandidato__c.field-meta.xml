@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StatusCandidato__c</fullName>
+    <description>Exibe os status do candidato</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Selecione uma das opções para referenciar o status atual do candidato</inlineHelpText>
+    <label>Status Candidato</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Em Análise</fullName>
+                <default>true</default>
+                <label>Em Análise</label>
+            </value>
+            <value>
+                <fullName>Reprovado na Análise</fullName>
+                <default>false</default>
+                <label>Reprovado na Análise</label>
+            </value>
+            <value>
+                <fullName>Aguardando Aprovação p/ Treinamento</fullName>
+                <default>false</default>
+                <label>Aguardando Aprovação p/ Treinamento</label>
+            </value>
+            <value>
+                <fullName>Reprovado na Análise do Gestor</fullName>
+                <default>false</default>
+                <label>Reprovado na Análise do Gestor</label>
+            </value>
+            <value>
+                <fullName>Em Treinamento</fullName>
+                <default>false</default>
+                <label>Em Treinamento</label>
+            </value>
+            <value>
+                <fullName>Reprovado no Treinamento</fullName>
+                <default>false</default>
+                <label>Reprovado no Treinamento</label>
+            </value>
+            <value>
+                <fullName>Aprovado pelo Treinamento</fullName>
+                <default>false</default>
+                <label>Aprovado pelo Treinamento</label>
+            </value>
+            <value>
+                <fullName>Aprovado Direto</fullName>
+                <default>false</default>
+                <label>Aprovado Direto</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

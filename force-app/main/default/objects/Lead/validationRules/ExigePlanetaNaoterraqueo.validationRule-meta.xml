@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExigePlanetaNaoterraqueo</fullName>
+    <active>true</active>
+    <description>A regra exige o preenchimento do campo &apos;Planeta de Origem&apos; se a caixa de seleção &apos;É Terráqueo?&apos; não estiver selecionada.</description>
+    <errorConditionFormula>NOT(IsTerraqueo__c) &amp;&amp;  ISBLANK( PlanetaOrigem__c )</errorConditionFormula>
+    <errorDisplayField>PlanetaOrigem__c</errorDisplayField>
+    <errorMessage>Indique o Planeta de Origem</errorMessage>
+</ValidationRule>

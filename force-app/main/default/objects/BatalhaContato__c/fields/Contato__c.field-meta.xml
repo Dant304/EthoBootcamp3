@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contato__c</fullName>
+    <description>Objeto para relacionar o contato com a batalha</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Objeto para relacionar o contato com a batalha</inlineHelpText>
+    <label>Contato</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Batalhas do Contato</relationshipLabel>
+    <relationshipName>Batalhas_do_Contato</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

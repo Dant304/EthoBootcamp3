@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DataTermino__c</fullName>
+    <description>Data de término da batalha atual</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Data de término da batalha atual</inlineHelpText>
+    <label>Data de término</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>
