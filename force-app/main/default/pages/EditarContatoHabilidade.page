@@ -1,0 +1,34 @@
+<apex:page standardController="Contact">
+<!-- Criar uma forma de atualizar dados do contato e as habilidades -->
+
+<apex:form >
+    <apex:pageBlock tabStyle="Contact" title="Ferramenta de edição do {!Contact.RecordType.Name} e habilidades">
+        <apex:messages />
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Voltar ao registro" />
+            <apex:commandButton value="Salvar alterações" action="{!save}"/>
+        </apex:pageBlockButtons>
+
+        <apex:pageBlockSection title="Informações do {!Contact.RecordType.Name}">
+            <apex:inputField value="{!Contact.Name}" />
+            <apex:inputField value="{!Contact.LastName}" />
+            <apex:inputField value="{!Contact.NomeGuerra__c}" />
+            <apex:inputField value="{!Contact.Phone}" />
+            <apex:inputField value="{!Contact.Email}"  />
+
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="Informações do {!Contact.RecordType.Name}">
+
+            <apex:dataTable value="{!habilidades}" var="habilidade">
+                <apex:column >
+                    <apex:inputField value="{!habilidade.Habilidade__c}" />
+                    <apex:inputField value="{!habilidade.NivelHabilidade__c}" />
+                </apex:column>
+            </apex:dataTable>
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+
+</apex:form>
+</apex:page>
