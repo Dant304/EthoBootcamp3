@@ -1,12 +1,12 @@
-<apex:page standardController="Contact">
+<apex:page standardController="Contact" extensions="EditarContatoHabilidadeExtension">
 <!-- Criar uma forma de atualizar dados do contato e as habilidades -->
 
 <apex:form >
     <apex:pageBlock tabStyle="Contact" title="Ferramenta de edição do {!Contact.RecordType.Name} e habilidades">
         <apex:messages />
         <apex:pageBlockButtons >
-            <apex:commandButton value="Voltar ao registro" />
-            <apex:commandButton value="Salvar alterações" action="{!save}"/>
+            <apex:commandButton value="Voltar ao registro" action="{!voltar}"/>
+            <apex:commandButton value="Salvar alterações" action="{!salvar}"/>
         </apex:pageBlockButtons>
 
         <apex:pageBlockSection title="Informações do {!Contact.RecordType.Name}">
