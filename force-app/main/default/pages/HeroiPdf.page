@@ -1,0 +1,53 @@
+<apex:page standardController="Contact" renderAs="pdf">
+
+    <center>
+        <h1>Dados do Herói</h1>
+    </center>   
+
+    <table>
+        <tr>
+            <th>Nome de Guerra</th>
+            <td><apex:outputText value="{!Contact.NomeGuerra__c}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Nome Completo</th>
+            <td><apex:outputText value="{!Contact.Name}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Nível de Herói</th>
+            <td><apex:outputText value="{!Contact.NivelHeroi__c}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Status Candidato</th>
+            <td><apex:outputText value="{!Contact.StatusCandidato__c}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Feedback Treinamento</th>
+            <td><apex:outputText value="{!Contact.FeedbackTreinamento__c}"></apex:outputText></td>
+        </tr>
+    </table>
+
+</apex:page>hr>
+<br/>
+<br/>
+<br/>
+
+    <center>
+        <h2>Habilidades</h2>
+    </center>
+
+    <table>
+        <tr>
+            <th>Habilidade</th>
+            <th>Level</th>
+        </tr>
+        <tbody>
+            <apex:repeat var="HabilidadeContato" value="{!Contact.HabilidadeContato__r}">
+            <tr>
+                <td>{!HabilidadeContato.Habilidade__r.Name}</td>
+                <td>{!HabilidadeContato.NivelHabilidade__c</td>
+            </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+</apex:page>
