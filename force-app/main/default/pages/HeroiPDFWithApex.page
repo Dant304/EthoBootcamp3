@@ -1,0 +1,89 @@
+<apex:page controller="HeroiPDFWithApexController" renderAs="pdf">
+
+    <center>
+        <h1>Dados do Herói</h1>
+    </center>   
+
+    <table width='80%'>
+        <tr>
+            <th>Nome de Guerra</th>
+            <td><apex:outputText value="{!contato.NomeGuerra__c}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Nome Completo</th>
+            <td><apex:outputText value="{!contato.Name}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Nível de Herói</th>
+            <td><apex:outputText value="{!contato.NivelHeroi__c}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Status Candidato</th>
+            <td><apex:outputText value="{!contato.StatusCandidato__c}"></apex:outputText></td>
+        </tr>
+        <tr>
+            <th>Feedback Treinamento</th>
+            <td><apex:outputText value="{!contato.FeedbackTreinamento__c}"></apex:outputText></td>
+        </tr>
+    </table>
+    <hr/>
+    <br/>
+    <br/>
+    <br/>
+
+    <center>
+        <h2>Habilidades</h2>
+    </center>
+
+    <table width='100%'>
+        <tr>
+            <th>Habilidade</th>
+            <th>Level</th>
+        </tr>
+        <tbody>
+            <apex:repeat var="HabilidadeContato" value="{!contato.HabilidadesContato__r}">
+            <tr>
+                <td>{!HabilidadeContato.Habilidade__r.Name}</td>
+                <td>{!HabilidadeContato.NivelHabilidade__c}</td>
+            </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+    
+    <hr/>
+    <br/>
+    <br/>
+    <br/>
+
+    <center>
+        <h2>batalhas</h2>
+    </center>
+
+    <table width='100%'>
+        <tr>
+            <th>Batalha</th>
+            <th>Descrição</th>
+            <th>Data Início</th>
+            <th>Data Término</th>
+        </tr>
+        <tbody>
+            <apex:repeat var="BatalhaContato" value="{!contato.Batalhas_do_Contato__r}">
+            <tr>
+                <td>{!BatalhaContato.Batalha__r.Name}</td>
+                <td>{!BatalhaContato.Batalha__r.Descricao__c}</td>
+                <td>
+                    <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">
+                        <apex:param value="{!BatalhaContato.Batalha__r.DataInicio__c}"></apex:param>
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">
+                        <apex:param value="{!BatalhaContato.Batalha__r.DataTermino__c}"></apex:param>
+                    </apex:outputText>
+                </td>
+            </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+
+</apex:page>
