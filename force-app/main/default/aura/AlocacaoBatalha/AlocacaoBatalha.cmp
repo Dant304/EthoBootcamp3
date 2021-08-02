@@ -1,0 +1,21 @@
+<aura:component controller='AlocacaoBatalhaController' implements='force:appHostable'>
+
+
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+
+    <aura:handler name='init' value='{!this}' action='{!c.init}' />
+
+    
+    <lightning:card variant="Narrow" title="Ferramenta para alocação de contatos em batalhas" iconName="custom:custom9" >
+        <aura:set attribute="actions">
+            <lightning:button label="Nova alocação" title="Clique para alocar contato em batalha" onclick="{! c.handleClick }"/>
+        </aura:set>
+
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </lightning:card>
+</aura:component>	
