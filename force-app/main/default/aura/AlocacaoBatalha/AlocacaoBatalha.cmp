@@ -12,10 +12,18 @@
             <lightning:button label="Nova alocação" title="Clique para alocar contato em batalha" onclick="{! c.handleClick }"/>
         </aura:set>
 
+        <aura:if isTrue="{!not(empty(v.data))}">
         <lightning:datatable
+                title='Batalhas em andamento'
                 keyField="id"
                 data="{! v.data }"
                 columns="{! v.columns }"
-                hideCheckboxColumn="true"/>
+                hideCheckboxColumn="true"
+                onRowAction='{! c.viewRecord}'/>
+                <aura:set attribute='else'>
+                    <h3 class='slds-section__title'>Não existem batalhas em andamento</h3>
+                </aura:set>
+        </aura:if>
+
     </lightning:card>
 </aura:component>	

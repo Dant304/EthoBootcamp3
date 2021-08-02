@@ -15,8 +15,8 @@
                 iconPosition: 'left'
             }},
             {type: "button", typeAttributes: {
-                label: 'Abrir',
-                name: 'View',
+                label: 'Editar',
+                name: 'Edit',
                 title: 'Clique',
                 disabled: false,
                 value: 'view',
@@ -41,13 +41,13 @@
                 var rows = response.getReturnValue();
                 console.log('SUCESSO');
 
-                for(var i = 0; i < rows.lenght; i++){
+                for(var i = 0; i < rows.length; i++){
                     var row = rows[i];
                     if(row.Contato__r && row.Batalha__r){
-                        row.batalha     = rows.Batalha__r.Name;
-                        row.contato     = rows[i].Contato__r.NomeGuerra__c;
-                        row.tipo        = rows[i].Contato__r.RecordType.Name;
-                        row.status      = rows[i].Batalha__r.Status;
+                        row.contato     = row.Contato__r.NomeGuerra__c;
+                        row.batalha     = row.Batalha__r.Name;
+                        row.tipo        = row.Contato__r.RecordType.Name;
+                        row.status      = row.Batalha__r.StatusBatalha__c;
 
                     }
                 }
@@ -64,5 +64,26 @@
         $A.enqueueAction(action);
 
         
+    },
+
+    viewRecord : function(component, event){
+        var recId = event.getParam('row').Id;
+        var actionName = event.getParam('action').name;
+        if(actionName === 'Edit'){
+
+            var editRecordEvent = $A.get("e.force:editRecord");
+            editRecordEvent.setParams({
+                "recordId": recId
+            });
+            editRecordEvent.fire();
+
+        }else if (action === 'View'){
+
+            var viewRecordEvent = $A.get('e.force:navigateToURL');
+            viewRecordEvent.setParams({
+                "url": "/" + recId
+            });
+            viewRecordEvent.fire();
+        }
     }
 })

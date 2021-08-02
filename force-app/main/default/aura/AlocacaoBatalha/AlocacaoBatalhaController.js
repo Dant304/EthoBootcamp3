@@ -3,8 +3,12 @@
         alert('entrou');
     },
 
-    init :function(component, event, helper){
+    init : function(component, event, helper){
         helper.setColumns( component );
         helper.fetchData( component );
+    },
+
+    viewRecord : function(component, event, helper){
+        helper.viewRecord( component, event);
     }
 })
