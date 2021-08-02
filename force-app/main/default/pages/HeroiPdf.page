@@ -27,25 +27,53 @@
         </tr>
     </table>
 
-</apex:page>hr>
-<br/>
-<br/>
-<br/>
+    <hr/>
+    <br/>
+    <br/>
+    <br/>
 
     <center>
         <h2>Habilidades</h2>
     </center>
 
-    <table>
+    <table width='100%'>
         <tr>
             <th>Habilidade</th>
             <th>Level</th>
         </tr>
         <tbody>
-            <apex:repeat var="HabilidadeContato" value="{!Contact.HabilidadeContato__r}">
+            <apex:repeat var="HabilidadeContato" value="{!Contact.HabilidadesContato__r}">
             <tr>
                 <td>{!HabilidadeContato.Habilidade__r.Name}</td>
-                <td>{!HabilidadeContato.NivelHabilidade__c</td>
+                <td>{!HabilidadeContato.NivelHabilidade__c}</td>
+            </tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+    
+    <hr/>
+    <br/>
+    <br/>
+    <br/>
+
+    <center>
+        <h2>batalhas</h2>
+    </center>
+
+    <table width='100%'>
+        <tr>
+            <th>Batalha</th>
+            <th>Descrição</th>
+            <th>Data Início</th>
+            <th>Data Término</th>
+        </tr>
+        <tbody>
+            <apex:repeat var="BatalhaContato" value="{!Contact.Batalhas_do_Contato__r}">
+            <tr>
+                <td>{!BatalhaContato.Batalha__r.Name}</td>
+                <td>{!BatalhaContato.Batalha__r.Descricao__c}</td>
+                <td>{!BatalhaContato.Batalha__r.DataInicio__c}</td>
+                <td>{!BatalhaContato.Batalha__r.DataTermino__c}</td>
             </tr>
             </apex:repeat>
         </tbody>
