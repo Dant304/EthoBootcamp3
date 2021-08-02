@@ -19,7 +19,7 @@
                 name: 'Edit',
                 title: 'Clique',
                 disabled: false,
-                value: 'view',
+                value: 'edit',
                 iconPosition: 'left'
             }}
         ] );
@@ -69,7 +69,7 @@
     viewRecord : function(component, event){
         var recId = event.getParam('row').Id;
         var actionName = event.getParam('action').name;
-        if(actionName === 'Edit'){
+        if(actionName == 'Edit'){
 
             var editRecordEvent = $A.get("e.force:editRecord");
             editRecordEvent.setParams({
@@ -77,7 +77,7 @@
             });
             editRecordEvent.fire();
 
-        }else if (action === 'View'){
+        }else if (actionName == 'View'){
 
             var viewRecordEvent = $A.get('e.force:navigateToURL');
             viewRecordEvent.setParams({
