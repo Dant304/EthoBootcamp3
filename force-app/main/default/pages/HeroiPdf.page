@@ -4,7 +4,7 @@
         <h1>Dados do Herói</h1>
     </center>   
 
-    <table>
+    <table width='80%'>
         <tr>
             <th>Nome de Guerra</th>
             <td><apex:outputText value="{!Contact.NomeGuerra__c}"></apex:outputText></td>
@@ -72,8 +72,16 @@
             <tr>
                 <td>{!BatalhaContato.Batalha__r.Name}</td>
                 <td>{!BatalhaContato.Batalha__r.Descricao__c}</td>
-                <td>{!BatalhaContato.Batalha__r.DataInicio__c}</td>
-                <td>{!BatalhaContato.Batalha__r.DataTermino__c}</td>
+                <td>
+                    <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">
+                        <apex:param value="{!BatalhaContato.Batalha__r.DataInicio__c}"></apex:param>
+                    </apex:outputText>
+                </td>
+                <td>
+                    <apex:outputText value="{0, date, dd'/'MM'/'yyyy}">
+                        <apex:param value="{!BatalhaContato.Batalha__r.DataTermino__c}"></apex:param>
+                    </apex:outputText>
+                </td>
             </tr>
             </apex:repeat>
         </tbody>
